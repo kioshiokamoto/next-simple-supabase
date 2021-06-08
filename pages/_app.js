@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Head from 'next/head';
 import { useState, useEffect } from 'react';
 import { supabase } from '../utils/api';
 import '../styles/globals.css';
@@ -18,6 +19,9 @@ function MyApp({ Component, pageProps }) {
 	}
 	return (
 		<div>
+			<Head>
+				<title>NEXT - SUPABASE</title>
+			</Head>
 			<nav className="p-6 border-b border-gray-300">
 				<Link href="/">
 					<span className="mr-6 cursor-pointer">Inicio</span>
@@ -25,6 +29,11 @@ function MyApp({ Component, pageProps }) {
 				{user && (
 					<Link href="/crear-post">
 						<span className="mr-6 cursor-pointer">Crear post</span>
+					</Link>
+				)}
+				{user && (
+					<Link href="/mis-posts">
+						<span className="mr-6 cursor-pointer">Mis Posts</span>
 					</Link>
 				)}
 				<Link href="/perfil">

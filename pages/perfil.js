@@ -19,9 +19,12 @@ function Profile(props) {
 export default function AuthProfile() {
 	return (
 		<Auth.UserContextProvider supabaseClient={supabase}>
-			<Profile supabaseClient={supabase}>
-				<Auth supabaseClient={supabase} />
-			</Profile>
+			<div className="flex flex-col max-w-2xl mx-auto space-y-5">
+				<Profile supabaseClient={supabase}>
+					{/* <Auth supabaseClient={supabase} providers={['github']} /> */}
+					<Auth supabaseClient={supabase} />
+				</Profile>
+			</div>
 		</Auth.UserContextProvider>
 	);
 }
